@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>月1集客便 | 飲食店専用SNS集客サービス</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --page-bg: #e8e8e8;
+  --canvas-bg: #ffffff;
+  --placeholder-bg: #f7f2ea;
+  --placeholder-border: #d9c7ad;
+  --text: #2b2118;
+  --sub: #7a6958;
+  --line: #00b900;
+  --line-dark: #009f00;
+}
+body {
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+.lp {
+  width: min(100%, 640px);
+  margin: 0 auto;
+  background: var(--canvas-bg);
+  box-shadow: 0 0 40px rgba(0,0,0,0.15);
+  padding-bottom: 84px;
+}
+.image-section {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  background: var(--placeholder-bg);
+  border-bottom: 1px solid rgba(43,33,24,0.08);
+  overflow: hidden;
+}
+.image-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: top;
+}
+.image-section.is-missing {
+  aspect-ratio: 2 / 3;
+}
+.placeholder {
+  display: none;
+  position: absolute;
+  inset: 18px;
+  border: 2px dashed var(--placeholder-border);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.48) 25%, transparent 25%) 0 0 / 28px 28px,
+    linear-gradient(135deg, transparent 75%, rgba(255,255,255,0.48) 75%) 0 0 / 28px 28px,
+    rgba(255,255,255,0.2);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+.image-section.is-missing .placeholder {
+  display: flex;
+}
+.placeholder strong {
+  display: block;
+  font-size: clamp(22px, 5vw, 34px);
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.placeholder span {
+  display: block;
+  margin-top: 10px;
+  color: var(--sub);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.video-testimonial {
+  background: #FFF8F0;
+  padding: 48px 24px 52px;
+  border-bottom: 1px solid rgba(43,33,24,0.08);
+}
+.video-testimonial .vt-eyebrow {
+  text-align: center;
+  margin-bottom: 14px;
+}
+.video-testimonial .vt-eyebrow span {
+  display: inline-block;
+  background: #fff;
+  color: #FF6B00;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 5px 18px;
+  border-radius: 20px;
+  border: 2px solid #FF6B00;
+  letter-spacing: 0.04em;
+}
+.video-testimonial .vt-headline {
+  text-align: center;
+  color: #1F1F1F;
+  font-size: clamp(22px, 5.5vw, 30px);
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.video-testimonial .vt-headline em {
+  color: #FF6B00;
+  font-style: normal;
+}
+.video-testimonial .vt-store {
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.video-testimonial .video-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.14);
+  background: #000;
+}
+.video-testimonial video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.video-testimonial .vt-quote {
+  margin-top: 24px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 20px 20px 24px;
+  border-left: 5px solid #FF6B00;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.video-testimonial .vt-quote p {
+  color: #1F1F1F;
+  font-size: clamp(16px, 4vw, 19px);
+  font-weight: 700;
+  line-height: 1.8;
+}
+.video-testimonial .vt-quote .vt-name {
+  display: block;
+  margin-top: 10px;
+  color: #888;
+  font-size: 13px;
+  font-weight: 500;
+}
+.floating-cta {
+  position: fixed;
+  right: 0;
+  bottom: 16px;
+  left: 0;
+  width: min(calc(100% - 32px), 600px);
+  margin: 0 auto;
+  z-index: 999;
+}
+.floating-cta a {
+  display: block;
+  background: var(--line);
+  color: #ffffff;
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0,185,0,0.4);
+}
+.floating-cta a:hover {
+  background: var(--line-dark);
+}
+.floating-cta p {
+  margin-top: 6px;
+  color: rgba(43,33,24,0.72);
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<main class="lp" aria-label="月1集客便 ランディングページ">
+  <section id="section-01-fv" class="image-section" aria-label="01 FV">
+    <img src="v3_images/01_fv.png" alt="01 FV">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>01_fv</strong><span>v3_images/01_fv.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-02-problem" class="image-section" aria-label="02 Problem">
+    <img src="v3_images/02_problem.png" alt="02 Problem">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>02_problem</strong><span>v3_images/02_problem.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-03a-bridge" class="image-section" aria-label="03A Bridge">
+    <img src="v3_images/03a_bridge.png" alt="03A Bridge">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>03a_bridge</strong><span>v3_images/03a_bridge.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-03b-bridge" class="image-section" aria-label="03B Bridge">
+    <img src="v3_images/03b_bridge.png" alt="03B Bridge">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>03b_bridge</strong><span>v3_images/03b_bridge.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-04-solution" class="image-section" aria-label="04 Solution">
+    <img src="v3_images/04_solution.png" alt="04 Solution">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>04_solution</strong><span>v3_images/04_solution.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-05-why" class="image-section" aria-label="05 Why">
+    <img src="v3_images/05_why.png" alt="05 Why">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>05_why</strong><span>v3_images/05_why.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-06-mid-cta" class="image-section" aria-label="06 Mid CTA">
+    <img src="v3_images/06_mid_cta.png" alt="06 Mid CTA">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>06_mid_cta</strong><span>v3_images/06_mid_cta.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-07-results" class="image-section" aria-label="07 Results">
+    <img src="v3_images/07_results.png" alt="07 Results">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>07_results</strong><span>v3_images/07_results.png</span></div>
+    </div>
+  </section>
+
+  <div class="video-testimonial" aria-label="やすさんのインタビュー動画">
+    <div class="vt-eyebrow"><span>実際の導入店舗オーナーの声</span></div>
+    <p class="vt-headline">「動画をみて、<em>隣の駅</em>まで<br>来てくれた」</p>
+    <p class="vt-store">笑酒屋アテトサカナ 店長・やすさん</p>
+    <div class="video-wrap">
+      <video controls preload="metadata" playsinline>
+        <source src="20260215_アテトサカナ_店長.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="vt-quote">
+      <p>
+        月1回の撮影だけで、<br>知らなかったお客さんが<br>来てくれるようになった。
+        <span class="vt-name">— 笑酒屋アテトサカナ 店長・やすさん</span>
+      </p>
+    </div>
+  </div>
+
+  <section id="section-08-benefit" class="image-section" aria-label="08 Benefit">
+    <img src="v3_images/08_benefit.png" alt="08 Benefit">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>08_benefit</strong><span>v3_images/08_benefit.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-09-team" class="image-section" aria-label="09 Team">
+    <img src="v3_images/09_team.png" alt="09 Team">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>09_team</strong><span>v3_images/09_team.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-10-comparison" class="image-section" aria-label="10 Comparison">
+    <img src="v3_images/10_comparison.png" alt="10 Comparison">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>10_comparison</strong><span>v3_images/10_comparison.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-11-faq" class="image-section" aria-label="11 FAQ">
+    <img src="v3_images/11_faq.png" alt="11 FAQ">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>11_faq</strong><span>v3_images/11_faq.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-12-philosophy" class="image-section" aria-label="12 Philosophy">
+    <img src="v3_images/12_philosophy.png" alt="12 Philosophy">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>12_philosophy</strong><span>v3_images/12_philosophy.png</span></div>
+    </div>
+  </section>
+
+  <section id="section-13-cta" class="image-section" aria-label="13 CTA">
+    <img src="v3_images/13_cta.png" alt="13 CTA">
+    <div class="placeholder" aria-hidden="true">
+      <div><strong>13_cta</strong><span>v3_images/13_cta.png</span></div>
+    </div>
+  </section>
+</main>
+
+<div class="floating-cta">
+  <a href="https://line.me/R/ti/p/%40390wbxhq" rel="noopener" target="_blank">今すぐLINEから相談する</a>
+  <p>登録30秒・ご相談無料 ／ 新規受け入れ毎月10店舗限定</p>
+</div>
+
+<script>
+document.querySelectorAll(".image-section img").forEach((img) => {
+  const section = img.closest(".image-section");
+  const markMissing = () => {
+    section.classList.add("is-missing");
+    img.setAttribute("hidden", "");
+  };
+
+  img.addEventListener("error", markMissing, { once: true });
+  if (img.complete && img.naturalWidth === 0) markMissing();
+});
+</script>
+</body>
+</html>
